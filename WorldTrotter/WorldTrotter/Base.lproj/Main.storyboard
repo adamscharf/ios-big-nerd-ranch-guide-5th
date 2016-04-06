@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwi-IA-u7R">
-                                <rect key="frame" x="245" y="28" width="111" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onw-7Q-K4m">
                                 <rect key="frame" x="147" y="120" width="306" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -41,6 +35,15 @@
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9F-8T-XCJ">
+                                <rect key="frame" x="175" y="28" width="250" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="S92-Pf-d2d"/>
+                                </constraints>
+                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy0-Cn-DAv">
                                 <rect key="frame" x="173" y="314" width="254" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -52,14 +55,14 @@
                         <constraints>
                             <constraint firstItem="XRj-pD-wcU" firstAttribute="top" secondItem="qDM-h1-1wS" secondAttribute="bottom" constant="8" id="05d-4Y-5A3"/>
                             <constraint firstItem="qDM-h1-1wS" firstAttribute="centerX" secondItem="onw-7Q-K4m" secondAttribute="centerX" id="0EH-SR-7iu"/>
-                            <constraint firstItem="onw-7Q-K4m" firstAttribute="top" secondItem="wwi-IA-u7R" secondAttribute="bottom" constant="8" id="5gd-uX-i90"/>
+                            <constraint firstItem="onw-7Q-K4m" firstAttribute="centerX" secondItem="l9F-8T-XCJ" secondAttribute="centerX" id="HxG-Tg-QdG"/>
                             <constraint firstItem="Sy0-Cn-DAv" firstAttribute="centerX" secondItem="onw-7Q-K4m" secondAttribute="centerX" id="NlU-wC-CWP"/>
-                            <constraint firstItem="wwi-IA-u7R" firstAttribute="centerX" secondItem="onw-7Q-K4m" secondAttribute="centerX" id="fmO-Ca-lNl"/>
+                            <constraint firstItem="l9F-8T-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dOQ-Ka-MQx"/>
                             <constraint firstItem="XRj-pD-wcU" firstAttribute="centerX" secondItem="onw-7Q-K4m" secondAttribute="centerX" id="iVF-eY-5t6"/>
-                            <constraint firstItem="wwi-IA-u7R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jYH-Cx-zBh"/>
-                            <constraint firstItem="wwi-IA-u7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jua-MA-zjO"/>
                             <constraint firstItem="Sy0-Cn-DAv" firstAttribute="top" secondItem="XRj-pD-wcU" secondAttribute="bottom" constant="8" id="kjP-0n-yox"/>
+                            <constraint firstItem="onw-7Q-K4m" firstAttribute="top" secondItem="l9F-8T-XCJ" secondAttribute="bottom" constant="8" id="u3v-C9-jbc"/>
                             <constraint firstItem="qDM-h1-1wS" firstAttribute="top" secondItem="onw-7Q-K4m" secondAttribute="bottom" constant="8" id="vxv-w2-FUl"/>
+                            <constraint firstItem="l9F-8T-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xjr-rk-Wv3"/>
                         </constraints>
                     </view>
                 </viewController>
