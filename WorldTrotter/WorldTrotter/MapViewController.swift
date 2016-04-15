@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     var mapView: MKMapView!
     
@@ -20,6 +20,8 @@ class MapViewController: UIViewController {
         // Set it as *the* view of this view controller
         view = mapView
         
+        
+        ///////////// SegmentedControl \\\\\\\\\\\\\
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
@@ -38,11 +40,28 @@ class MapViewController: UIViewController {
         trailingContraint.active = true
         
         segmentedControl.addTarget(self, action: #selector(mapTypeChanged), forControlEvents: .ValueChanged)
+        
+        
+        ///////////// Button \\\\\\\\\\\\\
+        let userLocationButton = UIButton(type: .System)
+        userLocationButton.backgroundColor = UIColor.whiteColor()
+        userLocationButton.setTitle("Current Location", forState: UIControlState.Normal)
+        //userLocationButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        
+        userLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(userLocationButton)
+        
+        userLocationButton.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
+        userLocationButton.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor, constant: -8).active = true
+        
+        userLocationButton.addTarget(self, action: #selector(zoomToUserLocation), forControlEvents: .TouchUpInside)
     }
     
     override func viewDidLoad() {
         // Always call the super implementation of viewDidLoad
         super.viewDidLoad()
+        
+        mapView.userLocation
         
         print("MapViewController loaded its view")
     }
@@ -58,5 +77,9 @@ class MapViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func zoomToUserLocation(button: UIButton) {
+        let userLocation = mapView.userLocation
     }
 }
